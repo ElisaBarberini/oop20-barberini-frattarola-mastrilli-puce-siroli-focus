@@ -4,7 +4,7 @@ namespace AlexSiroli
 {
 
 	/// Interface that models a generic manager working on all elements.
-	/// @param <X> type of elements it manages. </param>
+	/// <typeparam name="X"> type of elements it manages. </typeparam>
 	public interface IManager<X>
 	{
 

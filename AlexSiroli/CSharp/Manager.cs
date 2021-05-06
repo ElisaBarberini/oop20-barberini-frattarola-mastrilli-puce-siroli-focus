@@ -4,7 +4,7 @@ namespace AlexSiroli
 {
 
 	/// Immutable implementation of a manager.
-	/// @param <X> type of elements it manages. </param>
+	/// <typeparam name="X"> type of elements it manages. </typeparam>
 	public class Manager<X> : IManager<X>
 	{
 
