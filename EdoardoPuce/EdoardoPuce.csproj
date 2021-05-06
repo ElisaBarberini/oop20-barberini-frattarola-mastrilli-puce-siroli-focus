@@ -50,10 +50,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="src\CalendarLogic.cs" />
     <Compile Include="src\Day.cs" />
+    <Compile Include="src\ICalendarLogic.cs" />
     <Compile Include="src\IDay.cs" />
     <Compile Include="src\Month.cs" />
     <Compile Include="src\WeekDays.cs" />
+    <Compile Include="Test\CalendarLogicTest.cs" />
     <Compile Include="Test\DayTest.cs" />
   </ItemGroup>
   <ItemGroup>
