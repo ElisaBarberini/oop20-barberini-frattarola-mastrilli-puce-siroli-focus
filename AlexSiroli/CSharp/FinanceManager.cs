@@ -19,13 +19,13 @@ namespace AlexSiroli
 			this.transactions = new Manager<ITransaction>();
 		}
 
-		/// {@inheritDoc}
+		/// <inheritdoc/>
 		public void AddAccount(IAccount account)
 		{
 			this.accounts.Add(account);
 		}
 
-		/// {@inheritDoc}
+		/// <inheritdoc/>
 		public void RemoveAccount(IAccount account)
 		{
 			var tmp = this.transactions.Elements.Where(t => t.Account.Equals(account)).ToList();
@@ -36,13 +36,13 @@ namespace AlexSiroli
 			this.accounts.Remove(account);
 		}
 
-		/// {@inheritDoc}
+		/// <inheritdoc/>
 		public void AddCategory(ICategory category)
 		{
 			this.categories.Add(category);
 		}
 
-		/// {@inheritDoc}
+		/// <inheritdoc/>
 		public void RemoveCategory(ICategory category)
 		{
 			if (!this.transactions.Elements.Select<ITransaction, ICategory>(t => t.Category).Contains(category))
@@ -55,13 +55,13 @@ namespace AlexSiroli
 			}
 		}
 
-		/// {@inheritDoc}
+		/// <inheritdoc/>
 		public void AddTransaction(ITransaction transaction)
 		{
 			this.transactions.Add(transaction);
 		}
 
-		/// {@inheritDoc}
+		/// <inheritdoc/>
 		public int GetAmount(IAccount account)
 		{
 			var acc = this.accounts.Elements.Where(a => a.Equals(account)).ToList().First();
@@ -69,7 +69,7 @@ namespace AlexSiroli
 				.Where(t => t.Account.Equals(acc)).Select<ITransaction, int>(t => t.Amount).Aggregate((t1, t2) => t1 + t2);
 		}
 
-		/// {@inheritDoc}
+		/// <inheritdoc/>
 		public void RemoveTransaction(ITransaction transaction)
 		{
 			if (this.transactions.Elements.Contains(transaction))

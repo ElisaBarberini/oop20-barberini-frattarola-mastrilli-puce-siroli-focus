@@ -15,13 +15,13 @@ namespace AlexSiroli
             this.elements = new HashSet<X>();
         }
 
-		/// {@inheritDoc}
+		/// <inheritdoc/>
 		public void Add(X elem)
 		{
 			this.elements.Add(elem);
 		}
 
-		/// {@inheritDoc}
+		/// <inheritdoc/>
 		public void Remove(X elem)
 		{
 			this.elements.Remove(elem);
