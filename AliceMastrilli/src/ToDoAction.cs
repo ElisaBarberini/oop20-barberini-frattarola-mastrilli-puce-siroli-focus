@@ -19,7 +19,22 @@ namespace oop
         {
             return annotation.Length <= MAX_LENGTH;
         }
-    
+
+        public override string ToString()
+        {
+            return base.ToString();
+        }
+
+        public override bool Equals(ToDoAction obj)
+        {
+            return base.Equals(obj.Annotation);
+        }
+
+        public override int GetHashCode()
+        {
+            return base.GetHashCode();
+        }
+
         public bool Done { get; set; }
        
         public string Annotation { get; set; }

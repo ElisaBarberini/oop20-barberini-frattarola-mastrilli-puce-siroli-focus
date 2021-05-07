@@ -1,9 +1,8 @@
 using NodaTime;
-using oop;
 using System;
 using Xunit;
 
-namespace Alice_Mastrilli
+namespace AliceMastrilli
 {
     public class DailyMoodTest
     {
@@ -20,7 +19,11 @@ namespace Alice_Mastrilli
             Assert.Equal(2, dailyMoodManager1.getMoodByDate(localDate));
             dailyMoodManager1.ModifyDailyMood(mood2);
             Assert.Equal(3, dailyMoodManager1.getMoodByDate(localDate));
-
+            dailyMoodManager1.DeleteDailyMood(mood2);
+            Assert.Equal(-1, dailyMoodManager1.getMoodByDate(localDate));
+            dailyMoodManager1.AddDailyMood(mood3);
+            Assert.Equal(4, dailyMoodManager1.getMoodByDate(date1));
+            dailyMoodManager1.DeleteDailyMood(mood3);
         }
     }
 }
