@@ -18,6 +18,9 @@ namespace Alice_Mastrilli
             DailyMood mood3 = new DailyMood(4, date1);
             dailyMoodManager1.AddDailyMood(mood1);
             Assert.Equal(2, dailyMoodManager1.getMoodByDate(localDate));
+            dailyMoodManager1.ModifyDailyMood(mood2);
+            Assert.Equal(3, dailyMoodManager1.getMoodByDate(localDate));
+
         }
     }
 }
