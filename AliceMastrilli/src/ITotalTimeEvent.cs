@@ -1,10 +1,11 @@
-﻿using NodaTime;
+﻿using ElisaBarberini;
+using NodaTime;
 
 
 namespace AliceMastrilli.src
 {
     internal interface ITotalTimeEvent
     {
-        Period ComputePeriod(string labelName);
+        Period ComputePeriod(IEvent evento);
     }
 }

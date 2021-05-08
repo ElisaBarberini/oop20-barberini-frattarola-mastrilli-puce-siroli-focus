@@ -1,19 +1,10 @@
-﻿namespace AliceMastrilli.src
-{
-    class TotalTimeEvent
-    {
-          private readonly IEvent eventManager;
-            public TotalTimeEvent(EventManager eventManager)
-            {
-                this.eventManager = eventManager;
-            }
+﻿using ElisaBarberini;
+using NodaTime;
 
-            public Period ComputePeriod(string labelName)
-            {
-                return this.eventManager.findByName(labelName).stream().map(s-> new Period(s.getStart().toDateTime(), s.getEnd().
-                    toDateTime())).reduce(Period::plus);
-            }
-        }
-     */   
+namespace AliceMastrilli.src
+{
+    class TotalTimeEvent : ITotalTimeEvent
+    {
+        public Period ComputePeriod(IEvent evento) => Period.Between(evento.GetStart(), evento.GetEnd());
     }
 }
