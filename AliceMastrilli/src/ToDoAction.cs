@@ -1,18 +1,16 @@
 ﻿using System;
 
-namespace oop
+namespace AliceMastrilli.src
 {
     public class ToDoAction
     {
         private static readonly int MAX_LENGTH = 50;
-        private readonly string annotation;
-        private readonly bool done;
         public ToDoAction(string annotation, bool done)
         {
             if (HasRightLength(annotation))
             {
-                this.annotation = annotation;
-                this.done = done;
+                Annotation = annotation;
+                Done = done;
             }
         }
         private bool HasRightLength(string annotation)
@@ -20,23 +18,19 @@ namespace oop
             return annotation.Length <= MAX_LENGTH;
         }
 
-        public override string ToString()
+        public override bool Equals(object obj)
         {
-            return base.ToString();
-        }
-
-        public override bool Equals(ToDoAction obj)
-        {
-            return base.Equals(obj.Annotation);
+            return obj is ToDoAction action &&
+                   Annotation == action.Annotation;
         }
 
         public override int GetHashCode()
         {
-            return base.GetHashCode();
+            return HashCode.Combine(Done, Annotation);
         }
 
         public bool Done { get; set; }
-       
+
         public string Annotation { get; set; }
 
     }

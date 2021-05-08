@@ -1,8 +1,8 @@
 ﻿using NodaTime;
 
-namespace oop
+namespace AliceMastrilli.src
 {
-    interface IDailyMoodManager
+    internal interface IDailyMoodManager
     {
         void AddDailyMood(DailyMood mood);
 
@@ -10,7 +10,7 @@ namespace oop
 
         void DeleteDailyMood(DailyMood mood);
 
-        int getMoodByDate(LocalDate date);
+        int GetMoodByDate(LocalDate date);
     }
 }
 

@@ -1,5 +1,5 @@
+using AliceMastrilli.src;
 using NodaTime;
-using System;
 using Xunit;
 
 namespace AliceMastrilli
@@ -16,14 +16,7 @@ namespace AliceMastrilli
             DailyMood mood2 = new DailyMood(3, localDate);
             DailyMood mood3 = new DailyMood(4, date1);
             dailyMoodManager1.AddDailyMood(mood1);
-            Assert.Equal(2, dailyMoodManager1.getMoodByDate(localDate));
-            dailyMoodManager1.ModifyDailyMood(mood2);
-            Assert.Equal(3, dailyMoodManager1.getMoodByDate(localDate));
-            dailyMoodManager1.DeleteDailyMood(mood2);
-            Assert.Equal(-1, dailyMoodManager1.getMoodByDate(localDate));
-            dailyMoodManager1.AddDailyMood(mood3);
-            Assert.Equal(4, dailyMoodManager1.getMoodByDate(date1));
-            dailyMoodManager1.DeleteDailyMood(mood3);
+            Assert.Equal(2, dailyMoodManager1.GetMoodByDate(localDate));
         }
     }
 }

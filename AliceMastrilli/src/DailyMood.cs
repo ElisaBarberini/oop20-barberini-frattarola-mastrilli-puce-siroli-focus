@@ -1,34 +1,27 @@
 ﻿using NodaTime;
 using System;
-using System.Collections.Generic;
-using System.Text;
 
-namespace oop
+namespace AliceMastrilli.src
 {
     class DailyMood
     {
-
         public DailyMood(int dailyValue, LocalDate date)
         {
             Value = dailyValue;
-            GetDate = date;
+            Date = date;
         }
         public int Value { get; set; }
-        public LocalDate GetDate { get; }
+        public LocalDate Date { get; }
 
-        public override bool Equals(DailyMood obj)
+        public override bool Equals(object obj)
         {
-            return base.Equals(obj.GetDate);
+            return obj is DailyMood mood &&
+                   Date.Equals(mood.Date);
         }
 
         public override int GetHashCode()
         {
-            return base.GetHashCode();
-        }
-
-        public override string ToString()
-        {
-            return base.ToString();
+            return HashCode.Combine(Value, Date);
         }
     }
 }

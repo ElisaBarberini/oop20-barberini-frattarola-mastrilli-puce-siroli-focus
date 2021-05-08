@@ -1,10 +1,8 @@
 ﻿using NodaTime;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
-namespace oop
+namespace AliceMastrilli.src
 {
     class DailyMoodManager : IDailyMoodManager
     {
@@ -16,32 +14,30 @@ namespace oop
 
         public void AddDailyMood(DailyMood mood)
         {
-            if (!this.set.Contains(mood))
+            if (!set.Contains(mood))
             {
-                this.set.Add(mood);
+                set.Add(mood);
             }
         }
 
         public void DeleteDailyMood(DailyMood mood)
         {
-            if (this.set.Contains(mood)) {
-                this.set.Remove(mood);
+            if (set.Contains(mood))
+            {
+                set.Remove(mood);
             }
         }
 
-        public int getMoodByDate(LocalDate date)
+        public int GetMoodByDate(LocalDate date)
         {
-            ISet<DailyMood> mood = this.set.Where(x => x.GetDate == date).ToHashSet();
-            if (mood.Count > 0) {
-                return mood.FirstOrDefault().Value;
-            }
-            return -1;
+            ISet<DailyMood> mood = set.Where(x => x.Date == date).ToHashSet();
+            return mood.Count <= 0 ? -1 : mood.FirstOrDefault().Value;
         }
 
         public void ModifyDailyMood(DailyMood mood)
         {
-            ISet<DailyMood> moodToUpdate = this.set.Where(x => x.GetDate.Equals(mood.
-                GetDate)).ToHashSet();
+            ISet<DailyMood> moodToUpdate = set.Where(x => x.Date.Equals(mood.
+                Date)).ToHashSet();
             if (moodToUpdate.Count > 0)
             {
                 moodToUpdate.First().Value = mood.Value;

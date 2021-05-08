@@ -1,13 +1,8 @@
-﻿using NodaTime;
-using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace oop
+﻿namespace AliceMastrilli.src
 {
-    class TotalTimeEvent 
+    class TotalTimeEvent
     {
-        /*    private readonly EventManager eventManager;
+          private readonly IEvent eventManager;
             public TotalTimeEvent(EventManager eventManager)
             {
                 this.eventManager = eventManager;
@@ -19,6 +14,6 @@ namespace oop
                     toDateTime())).reduce(Period::plus);
             }
         }
-        */
+     */   
     }
 }

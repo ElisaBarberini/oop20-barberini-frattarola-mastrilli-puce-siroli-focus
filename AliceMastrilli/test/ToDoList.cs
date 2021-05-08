@@ -1,8 +1,9 @@
-﻿using oop;
+﻿
+using AliceMastrilli.src;
 using System.Linq;
 using Xunit;
 
-namespace Alice_Mastrilli.test
+namespace AliceMastrilli
 {
     public class ToDoListTest
     {
@@ -23,7 +24,10 @@ namespace Alice_Mastrilli.test
             manager.RemoveAnnotation(test1);
             Assert.Null(manager.GetAnnotations().Where(a => a.Equals(test1)).FirstOrDefault());
             manager.RemoveAnnotation(test2);
-            Assert.Null(manager.GetAnnotations().Where(a => a.Equals(test2)).FirstOrDefault());
         }
     }
 }
+
+
+
+

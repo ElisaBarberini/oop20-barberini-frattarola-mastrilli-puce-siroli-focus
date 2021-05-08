@@ -1,12 +1,10 @@
 ﻿using NodaTime;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
-namespace oop
+
+namespace AliceMastrilli.src
 {
-    interface ITotalTimeEvent
+    internal interface ITotalTimeEvent
     {
-        Period ComputePeriod(String labelName);
+        Period ComputePeriod(string labelName);
     }
 }

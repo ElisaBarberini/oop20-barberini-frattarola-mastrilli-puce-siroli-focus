@@ -1,32 +1,23 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
-namespace oop
+namespace AliceMastrilli.src
 {
     class ToDoListManager : IToDoListManager
     {
-        readonly ISet<ToDoAction> set;
+        private readonly ISet<ToDoAction> set;
         public ToDoListManager() => set = new HashSet<ToDoAction>();
         public void AddAnnotation(ToDoAction tda)
         {
-            if (!this.set.Contains(tda))
+            if (!set.Contains(tda))
             {
-
-                this.set.Add((ToDoAction)tda);
+                set.Add(tda);
             }
         }
 
         public void ChangeBoxStatus(ToDoAction tda)
         {
-            
-                ISet<ToDoAction> actions = this.set.Where(x => x.Annotation.Equals(tda.
-                Annotation)).ToHashSet();
-                if (actions.Count > 0)
-                {
-                    actions.First<ToDoAction>().Done = !tda.Done;
-                }
+            set.Where(a => a.Equals(tda)).First().Done = !tda.Done;
         }
 
         public ISet<ToDoAction> GetAnnotations()
@@ -36,20 +27,21 @@ namespace oop
 
         public void RemoveAnnotation(ToDoAction tda)
         {
-            if (set.Contains(tda)) {
+            if (set.Contains(tda))
+            {
                 set.Remove(tda);
             }
         }
     }
- }
-
-    
-
-    
-    
+}
 
 
 
 
 
-  
+
+
+
+
+
+
